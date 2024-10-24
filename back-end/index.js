@@ -9,10 +9,10 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/agendamentos', async (req, res) => {
-    const { nome, descricao, telefone, email, mensagem } = req.body;
+    const { nome, descricao, telefone, email, mensagem, hora, date } = req.body;
 
     try {
-        const agendamento = await Agendamento.create({ nome, descricao, telefone, email, mensagem });
+        const agendamento = await Agendamento.create({ nome, descricao, telefone, email, mensagem, hora, date });
 
         // Enviar e-mail de confirmação
         const emailText = `
@@ -21,7 +21,11 @@ app.post('/agendamentos', async (req, res) => {
             Telefone: ${telefone}\n
             E-mail: ${email}\n
             Mensagem: ${mensagem}\n
+            Hora: ${hora}\n
+            Data: ${date}\n
         `;
+
+        console.log(emailText)
 
         await transporter.sendMail({
             from: `"ECT CONTABIL" <${process.env.EMAIL_USER}>`,

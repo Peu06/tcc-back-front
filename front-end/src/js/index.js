@@ -41,15 +41,15 @@ document.getElementById('agendamentoForm').addEventListener('submit', function (
     const email = document.getElementById('email').value;
     const descricao = document.getElementById('service').value;
     const telefone = document.getElementById('telefone').value;
-    const dateInput = document.getElementById('date');
-    const time = document.getElementById('time');
+    const date = document.getElementById('date').value;
+    const hora = document.getElementById('hora').value;
     const mensagem = document.getElementById('message').value;
 
-    console.log({ nome, email, descricao, telefone }); // Verifique se todos os valores estão corretos
+    console.log({ nome, email, descricao, date, hora, telefone }); // Verifique se todos os valores estão corretos
 
-    const info = { nome, descricao, telefone, email, data, mensagem };
+    const data = { nome, descricao, telefone, email, date, hora, mensagem };
 
-    fetch('https://ect-contabilidae-email.onrender.com/agendamentos', {
+    fetch('http://localhost:3000/agendamentos', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
