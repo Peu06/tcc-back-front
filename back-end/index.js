@@ -23,6 +23,7 @@ app.post('/agendamentos', async (req, res) => {
             Mensagem: ${mensagem}\n
             Hora: ${hora}\n
             Data: ${date}\n
+    
         `;
 
         console.log(emailText)

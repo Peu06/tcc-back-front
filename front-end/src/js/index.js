@@ -44,6 +44,7 @@ document.getElementById('agendamentoForm').addEventListener('submit', function (
     const date = document.getElementById('date').value;
     const hora = document.getElementById('hora').value;
     const mensagem = document.getElementById('message').value;
+    
 
     console.log({ nome, email, descricao, date, hora, telefone }); // Verifique se todos os valores estão corretos
 
