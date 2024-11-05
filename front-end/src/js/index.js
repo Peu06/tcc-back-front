@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.getElementById('agendamentoForm').addEventListener('submit', function (e) {
+document.getElementById('formulario').addEventListener('submit', function (e) {
     e.preventDefault();
 
     const nome = document.getElementById('name').value;
@@ -78,3 +78,70 @@ function initDate (){
     document.getElementById("date").setAttribute("min",today)
 }
 
+const API_KEY = 'AIzaSyBROP6JRKEmugX0lOZxd7Z59-nz1i8v98Q';
+    
+// ID da sua planilha (obtenha do link da planilha)
+const SPREADSHEET_ID = '1lnOIfVtk9qmtmKPHjufTHFrf4LafBrQj7eBFR4h-7xA';
+
+// Nome da aba que você quer acessar (pode ser o nome da aba ou o ID dela)
+const RANGE = 'Sheet1!A2:G100'; // exemplo de intervalo de células
+
+function initApi() {
+    gapi.client.init({
+      apiKey: API_KEY,
+    }).then(() => {
+      loadSheetData();
+    });
+  }
+
+  
+
+  // Função para carregar os dados da planilha
+  function loadSheetData() {
+    const request = gapi.client.request({
+      path: `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}`,
+    });
+
+    request.then((response) => {
+      // Verificando a resposta da API
+      console.log(response); // Verifique a estrutura da resposta
+
+      if (response.result && response.result.values) {
+        const data = response.result.values;
+
+        // Vamos agora criar variáveis com os dados da tabela
+        // Exemplo para pegar os valores da primeira linha (A2 até G2)
+        for (let i = 0; i < data.length; i++) {
+          let Id_ver = data[i][0];          // Id (coluna A)
+          let Servico_ver = data[i][1];     // Serviço (coluna B)
+          let Telefone_ver = data[i][2];    // Telefone (coluna C)
+          let Email_ver = data[i][3];       // E-mail (coluna D)
+          let Hora_ver = data[i][4];        // Hora (coluna E)
+          let Data_ver = data[i][5];        // Data (coluna F)
+          let Cliente_ver = data[i][6];     // Cliente (coluna G)
+
+          
+
+          // Exibir as variáveis no console para verificar
+          console.log(`Linha ${i + 1}:`);
+          console.log(`Id: ${Id_ver}`);
+          console.log(`Serviço: ${Servico_ver}`);
+          console.log(`Telefone: ${Telefone_ver}`);
+          console.log(`E-mail: ${Email_ver}`);
+          console.log(`Hora: ${Hora_ver}`);
+          console.log(`Data: ${Data_ver}`);
+          console.log(`Cliente: ${Cliente_ver}`);
+          console.log('---------------------------------');
+        }
+        
+
+      } else {
+        console.error("Nenhum dado encontrado.");
+      }
+    }, (error) => {
+      console.error('Erro ao acessar a planilha:', error);
+    });
+  }
+
+  // Carregar a API do Google
+  gapi.load('client', initApi);

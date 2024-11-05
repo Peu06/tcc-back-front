@@ -11,6 +11,7 @@
 </head>
 
 <body class="min-h-screen">
+    <script src="https://apis.google.com/js/api.js"></script>
     <div class="mx-auto">
         <div>
             <!-- Barra de Navegação -->
@@ -190,7 +191,7 @@
                     </div>
                 </div>
             </div>
-            <form id="agendamentoForm">
+            <form id="formulario">
                 <div class="flex flex-col mb-4">
                     <label for="name" class="mb-2 mt-6 font-semibold">Nome:</label>
                     <input type="text" id="name" name="name" required class="p-2 rounded border border-gray-300">
@@ -240,7 +241,7 @@
                     <textarea id="message" name="message" required
                         class="p-2 rounded border border-gray-300 resize-none"></textarea>
                 </div>
-                <button type="submit"
+                <button type="submit" id="btnEnviar"
                     class="w-max font-semibold border bg-blue-600 text-white rounded-md px-10 py-3 mt-6 mb-6">Enviar</button>
             </form>
         </div>
