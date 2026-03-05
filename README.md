@@ -33,37 +33,6 @@ As informações enviadas pelo formulário são processadas pelo backend e encam
 
 ---
 
-## 📂 Estrutura do projeto
-│
-├── back-end/
-│ ├── models/
-│ │ └── index.js
-│ │
-│ ├── .env.example
-│ ├── .gitignore
-│ ├── index.js
-│ ├── package.json
-│ └── package-lock.json
-│
-└── front-end/
-├── src/
-│ ├── images/
-│ ├── js/
-│ │ └── index.js
-│ └── css/
-│ ├── styles/
-│ ├── output.css
-│ ├── styles.css
-│ └── tailwind.css
-│
-├── index.html
-├── .gitignore
-├── package.json
-├── package-lock.json
-├── postcss.config.js
-└── tailwind.config.js
----
-
 ## 📚 Autor
 
 Projeto desenvolvido por Pedro como parte do TCC do curso técnico em Desenvolvimento de Sistemas (ETEC).
