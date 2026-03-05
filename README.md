@@ -4,7 +4,7 @@
 Este projeto foi desenvolvido como **Trabalho de Conclusão de Curso (TCC)** do curso técnico em Desenvolvimento de Sistemas pela **ETEC**.
 
 A aplicação consiste em um **site para um escritório de contabilidade**, onde clientes podem realizar **agendamentos de consultas online**.  
-As informações enviadas pelo formulário são processadas pelo backend e encaminhadas para o **e-mail da empresa**, além de serem registradas no **Google Calendar** para organização da agenda.
+As informações enviadas pelo formulário são processadas pelo backend e encaminhadas para o **e-mail da empresa**, além de serem registradas no **Google Calendar**  via **Zapier** para organização da agenda.
 
 ---
 
