@@ -31,8 +31,3 @@ As informações enviadas pelo formulário são processadas pelo backend e encam
 - Express
 - Manipulação de variáveis de ambiente (.env)
 
----
-
-## 📚 Autor
-
-Projeto desenvolvido por Pedro como parte do TCC do curso técnico em Desenvolvimento de Sistemas (ETEC).
